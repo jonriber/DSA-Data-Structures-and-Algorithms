@@ -6,18 +6,18 @@ def make_multiplier_of(n):
     return multiplier
 
 
-# Criação de closures
+# Creating closures
 times3 = make_multiplier_of(3)
 times5 = make_multiplier_of(5)
 
 
 
 if __name__ == '__main__':
-    # Saída: 27
+    # expected: 27
     print(times3(9))
 
-    # Saída: 15
+    # expected: 15
     print(times5(3))
 
-    # Saída: 30
+    # expected: 30
     print(times5(times3(2)))
