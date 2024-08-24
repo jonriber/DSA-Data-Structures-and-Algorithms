@@ -7,7 +7,7 @@ charset = string.ascii_lowercase + string.digits
 
 #define our password to be cracked
 #On real scenarios, this would be unknown and the main goal of the script
-password = "abc123"
+password = "abc"
 
 
 def brute_force(password, charset):
