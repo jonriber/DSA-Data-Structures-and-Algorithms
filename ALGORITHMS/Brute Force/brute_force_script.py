@@ -1,6 +1,6 @@
 import itertools
 import string
-import argparse
+import pdb  
 
 # define the charset to be used
 # this is a combination of lowercase letters and digits
@@ -21,7 +21,16 @@ def get_charset(options):
       raise ValueError("Invalid input")
   return charset
   
-def brute_force(password, charset):
+def brute_force(password, charset, keywords):
+  pdb.set_trace()
+  if keywords:    
+    for keyword_combination in itertools.permutations(keywords):
+      attempt = "".join(keyword_combination)
+      print(f"Trying {attempt}")
+      if attempt == password:
+        print(f"Password has been cracked! It was {attempt}")
+        return attempt
+      
   for length in range(1, len(password)+1):
     for attempt in itertools.product(charset, repeat=length):
       attempt = "".join(attempt)
@@ -30,13 +39,6 @@ def brute_force(password, charset):
         print(f"Password has been cracked! It was {attempt}")
         return attempt
       
-  for keyword_combination in itertools.permutations(keywords):
-    attempt = "".join(keyword_combination)
-    print(f"Trying {attempt}")
-    if attempt == password:
-        print(f"Password has been cracked! It was {attempt}")
-        return attempt
-  
   print("Password not found")
   print("- - - - - ")
   print("- - - -  ")
@@ -61,9 +63,10 @@ if __name__ == "__main__":
       print(e)
       continue
     
-    keywords = input("Enter possible keywords separated by commas (e.g., first name, last name, year of birth): ").split(',')
-
-    brute_force(password, charset)
+    keywords_input = input("Enter possible keywords separated by commas (e.g., first name, last name, year of birth) or leave empty: ")
+    keywords = [keyword.strip() for keyword in keywords_input.split(',')] if keywords_input else []
+    
+    brute_force(password, charset, keywords)
 
     again = input("Type 'exit' to quit or press Enter to run again: ")
     if again.lower() == 'exit':
