@@ -1,6 +1,7 @@
 import itertools
 import string
 import pdb  
+import getpass
 
 # define the charset to be used
 # this is a combination of lowercase letters and digits
@@ -57,7 +58,7 @@ def brute_force(password, charset, keywords):
 if __name__ == "__main__":
   
   while True:
-    password = input("Enter the password to crack: ")
+    password = getpass.getpass("Enter the password to crack: ")
     print("Choose charset options (you can combine them):")
     print("1: Lowercase letters")
     print("2: Digits")
