@@ -29,6 +29,14 @@ def brute_force(password, charset):
       if attempt == password:
         print(f"Password has been cracked! It was {attempt}")
         return attempt
+      
+  for keyword_combination in itertools.permutations(keywords):
+    attempt = "".join(keyword_combination)
+    print(f"Trying {attempt}")
+    if attempt == password:
+        print(f"Password has been cracked! It was {attempt}")
+        return attempt
+  
   print("Password not found")
   print("- - - - - ")
   print("- - - -  ")
@@ -52,6 +60,8 @@ if __name__ == "__main__":
     except ValueError as e:
       print(e)
       continue
+    
+    keywords = input("Enter possible keywords separated by commas (e.g., first name, last name, year of birth): ").split(',')
 
     brute_force(password, charset)
 
