@@ -22,8 +22,14 @@ def get_charset(options):
   return charset
   
 def brute_force(password, charset, keywords):
-  pdb.set_trace()
+  # pdb.set_trace()
   if keywords:    
+    for keyword in keywords:
+      print(f"Trying {keyword}")
+      if keyword == password:
+        print(f"Password has been cracked! It was {keyword}")
+        return keyword
+      
     for keyword_combination in itertools.permutations(keywords):
       attempt = "".join(keyword_combination)
       print(f"Trying {attempt}")
