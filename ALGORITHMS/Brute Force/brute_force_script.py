@@ -27,18 +27,35 @@ def brute_force(password, charset):
       if attempt == password:
         print(f"Password has been cracked! It was {attempt}")
         return attempt
+  print("Password not found")
+  print("- - - - - ")
+  print("- - - -  ")
+  print("- - -  ")
+  print("- -  ")
+  print("- ")
+  
   return ("Password not found")
 
 if __name__ == "__main__":
   
-  parser = argparse.ArgumentParser(description="Brute force password cracker")
-  parser.add_argument("password", help="The password to crack")
-  parser.add_argument("charset_option", choices=['1', '2'], help="Escolha '1' para letras minúsculas ou '2' para dígitos.")
-  args = parser.parse_args()
-  charset = get_charset(args.charset)
-  password = args.password
-  
-  brute_force(password, charset)
+  while True:
+    password = input("Enter the password to crack: ")
+    print("Choose charset option:")
+    print("1: Lowercase letters")
+    print("2: Digits")
+    charset_option = input("Enter your choice (1 or 2): ")
+
+    try:
+        charset = get_charset(charset_option)
+    except ValueError as e:
+        print(e)
+        continue
+
+    brute_force(password, charset)
+
+    again = input("Type 'exit' to quit or press Enter to run again: ")
+    if again.lower() == 'exit':
+        break
 
 
 
