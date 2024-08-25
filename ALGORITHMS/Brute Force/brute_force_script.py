@@ -69,8 +69,23 @@ if __name__ == "__main__":
       print(e)
       continue
     
-    keywords_input = input("Enter possible keywords separated by commas (e.g., first name, last name, year of birth) or leave empty: ")
-    keywords = [keyword.strip() for keyword in keywords_input.split(',')] if keywords_input else []
+    keywords = []
+    names_input = input("Enter possible first names separated by commas or leave empty: ")
+    if names_input:
+      keywords.extend([name.strip() for name in names_input.split(',')])
+
+    last_names_input = input("Enter possible last names separated by commas or leave empty: ")
+    if last_names_input:
+      keywords.extend([last_name.strip() for last_name in last_names_input.split(',')])
+
+    birth_dates_input = input("Enter possible birth dates separated by commas or leave empty: ")
+    if birth_dates_input:
+      keywords.extend([birth_date.strip() for birth_date in birth_dates_input.split(',')])
+
+    nicknames_input = input("Enter possible nicknames separated by commas or leave empty: ")
+    if nicknames_input:
+      keywords.extend([nickname.strip() for nickname in nicknames_input.split(',')])
+
     
     brute_force(password, charset, keywords)
 
