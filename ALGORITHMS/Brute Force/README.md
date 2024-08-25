@@ -19,3 +19,13 @@ checking every possibility within a range, using all kinds of combinations.
 Combinations are defined on the variable `charset`.
 
 A built in python method is used to test all combinations within a range. The method is `itertools.product`.
+
+## Considerations
+
+This is a very very slow attempt to break a password, and statistically, it has almost zero chance to crack a real
+case scenario, due to a lot of variables.
+
+To work properly, it should be used together with another tools, like well projected social engineering questions,
+almost like creating a funnel strategy to increase chances and probabilities of guessing it correctly.
+
+The next level is to use dictionary attacks, which are generally faster and based on a large amount of data.
