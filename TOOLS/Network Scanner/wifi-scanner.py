@@ -4,7 +4,7 @@ import time
 
 def wifi_scan():
   wifi = pywifi.PyWiFi()
-  iface = wifi.interfaces()[3]
+  iface = wifi.interfaces()[0]
   
   iface.scan()
   time.sleep(5)
@@ -17,8 +17,8 @@ def wifi_scan():
       'SSID': network.ssid,
       'BSSID': network.bssid,
       'Signal': network.signal,
-      'Channel': network.channel,
-      'Encrypted': network.encryption_type,
+      'Channel': getattr(network, 'freq', 'Unknown'),  
+      'Encrypted': getattr(network, 'akm', ['Unknown'])[0] if network.akm else 'Unknown',  
     }
     networks.append(network_info)
   return networks
