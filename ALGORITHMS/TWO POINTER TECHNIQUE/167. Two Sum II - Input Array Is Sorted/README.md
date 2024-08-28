@@ -38,3 +38,43 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 numbers is sorted in non-decreasing order.
 -1000 <= target <= 1000
 The tests are generated such that there is exactly one solution.
+
+## Solution key points
+
+  numbers = [2, 7, 11, 15]
+  target = 9
+
+### Initial Pointers:
+
+- left = 0, right = 3
+- numbers[left] = 2, numbers[right] = 15
+- current_sum = 2 + 15 = 17
+
+### Check current_sum:
+
+- current_sum (17) is greater than target (9), so move the right 
+pointer to the left.
+- right = 2
+
+### Second Iteration:
+
+- left = 0, right = 2
+- numbers[left] = 2, numbers[right] = 11
+- current_sum = 2 + 11 = 13
+
+### Check current_sum:
+
+- current_sum (13) is still greater than target (9), so move the right pointer 
+to the left again.
+- right = 1
+
+### Third Iteration:
+
+- left = 0, right = 1
+- numbers[left] = 2, numbers[right] = 7
+- current_sum = 2 + 7 = 9
+
+### Check current_sum:
+
+- current_sum (9) equals target (9). We've found the solution!
+- Return [left + 1, right + 1] = [1, 2].
