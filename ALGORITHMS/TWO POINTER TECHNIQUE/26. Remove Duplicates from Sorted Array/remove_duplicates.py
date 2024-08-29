@@ -1,6 +1,9 @@
 
 # integer array sorted in non-decreasing order
 def remove_duplicates(nums):
+  if not nums:
+    return 0
+  
   [i, j,exclusive_number_counter] = [0, 1, 0]
   while j < len(nums):
     print("j is lower than len(nums)")
