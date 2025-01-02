@@ -1,5 +1,14 @@
 def max_sum_subarray(arr, K):
-    pass
+    max_sum = 0
+    window_sum = sum(arr[:K])
+    max_sum = window_sum
+    
+    for i in range(len(arr) - K):
+        window_sum = window_sum - arr[i] + arr[i + K]
+        max_sum = max(max_sum, window_sum)
+        
+    return max_sum
+    
 
 
 if (__name__ == '__main__'):
