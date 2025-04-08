@@ -23,4 +23,10 @@ Once my array is sorted, I should print the following three lines:
 2. First Element: firstElement, where  is the first element in the sorted array.
 3. Last Element: lastElement, where  is the last element in the sorted array.
 
-## S
+## Solution
+
+On the above code snippet, the swap function is not a native python method. In order to execute that, I have used
+a temporary variable to hold value and swap elements based on their array index.
+
+Also, It is important to have two iterations through the array, the outer one, with a flag called swapped.
+This flag is set to true every time a swap happens, which means the whole array iteration should happen again.
