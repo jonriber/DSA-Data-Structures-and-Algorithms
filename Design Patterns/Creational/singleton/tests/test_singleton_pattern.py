@@ -1,5 +1,5 @@
 import pytest
-from ..singleton.singleton_pattern import Singleton
+from ..singleton_pattern import Singleton
 
 class TestSingletonClass1:
   def test_class1_is_singleton(self):
