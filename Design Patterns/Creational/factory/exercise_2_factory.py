@@ -7,31 +7,39 @@
 # 2. Simulate sending by printing Sending {message}.
 # 3. Bonus: Use a dictionary to map string keys to classes.
 class Message:
+  
+  def __init__(self, content: str):
+    self.content = content
+    
   def send(self):
-    pass
+    raise NotImplementedError("Subclasses must implement this method")
 
 class EmailMessage(Message):
   def send(self):
-    print("Sending Email Message")
+    print("Sending Email Message:", self.content)
     
 class SMSMessage(Message):
   def send(self):
-    print("Sending SMS Message")
+    print("Sending SMS Message:", self.content)
     
 class PushNotification(Message):
   def send(self):
-    print("Sending Push Notification")
+    print("Sending Push Notification:", self.content)
 
 class MessageFactory:
-  def create_message(self, channel: str) -> Message:
-    if channel == "Email":
-      return EmailMessage()
-    elif channel == "SMS":
-      return SMSMessage() 
-    elif channel == "Push":
-      return PushNotification()
-    else:
-      raise ValueError("Unknown message channel")
+  
+  _registry = {
+    "Email": EmailMessage,
+    "SMS": SMSMessage,
+    "Push": PushNotification
+  }
+  
+  @staticmethod
+  def create_message(type_:str, content: str) -> Message:
+    message_class = MessageFactory._registry.get(type_.lower())
+    if not message_class:
+      raise ValueError(f"Unknown message type: {type_}")
+    return message_class(content)
     
   
 
