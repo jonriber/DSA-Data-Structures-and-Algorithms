@@ -42,4 +42,4 @@ if __name__ == "__main__":
   shapes = ["Circle", "Square", "Triangle"]
   for shape in shapes:
     shape_instance = factory.create_shape(shape)
-    print(shape_instance.draw())
+    print(shape_instance.draw()) 
