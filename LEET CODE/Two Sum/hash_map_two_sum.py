@@ -13,12 +13,10 @@ def two_sum_solution(nums, target):
 
     complement = target - number
     print(f"Complement needed: {complement}")
-    if complement not in hasher:
-      hasher[number] = i
-    print(f"Hash map after processing: {hasher}")
-
-    return [hasher.get(complement), i]
-  print("Testing for complement in hash map", hasher.get(2))
+    if hasher.get(number) is not None:
+      print(f"Found complement {number} in hash map at index {hasher.get(number)}")
+      return [hasher.get(number), i]
+    hasher[complement] = i
 
   
 
