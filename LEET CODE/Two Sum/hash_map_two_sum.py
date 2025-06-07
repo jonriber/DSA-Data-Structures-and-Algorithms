@@ -27,4 +27,9 @@ if __name__ == "__main__":
   # print(f"Indices of numbers that add up to {target}: {result}")
   print("Result:", result)
 
+  nums2 = [11,15,2,7]
+  target2 = 9
+  result2 = two_sum_solution(nums2, target2)
+  print(f"Indices of numbers that add up to {target2}: {result2}")
+
 
