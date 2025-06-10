@@ -25,6 +25,8 @@ The idea is to store a list of `words` for the equivalent keys of the dictionary
 - Sorting each word takes O(k log k), where k is the length of the word.
 - If there are n words, the total time complexity is O(n * k log k).
 
+** *
+
 ### Second: No sorting and dictionaries and lists
 
 Now, this is a time complexity improvement with no usage of sorting.
@@ -39,3 +41,5 @@ The key is to use a tuple of counts (one for each letter `a-z`) as the key.
 
 - Building the count list is O(k) for each word (no sorting).
 - Total time: O(n * k) (better than O(n * k log k)).
+
+** *
