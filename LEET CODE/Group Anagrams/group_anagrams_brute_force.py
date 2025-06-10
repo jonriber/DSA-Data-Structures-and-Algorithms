@@ -40,6 +40,7 @@ def group_anagram_no_cp(words):
     print(f"Tuple sorted word: {tuple_sorted_word}")
 
     anagrams[tuple_sorted_word].append(word)
+    # anagrams[tuple_sorted_word] = word
     print(f"Anagrams grouped: {anagrams}")
 
   print(f"Anagrams grouped: {anagrams}")
