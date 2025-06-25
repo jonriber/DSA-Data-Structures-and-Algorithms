@@ -4,6 +4,13 @@ class ListNode:
     self.val = val
     self.next = next
 
+def reverse_linked_list_recursive(head:ListNode) -> ListNode:
+  if not head or not head.next:
+    return head
+  new head = reverse_linked_list_recursive(head.next)
+  head.next.next = head  # Reverse the link
+  head.next = None  # Set the next of the current node to None
+  return new_head  # Return the new head of the reversed linked list
 
 def reverse_linked_list(head:ListNode) -> ListNode:
   """
