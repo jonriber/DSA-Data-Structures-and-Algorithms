@@ -4,6 +4,23 @@ def valid_parenthesis(s:str) -> bool:
     @param s: str - input string containing only '(', ')', '{', '}', '[' and ']'
     @return: bool - True if the input string is valid, False otherwise
   """
-  pass
+  stack = []
+  bracket_mapping = {
+    ')': '(',
+    '}': '{',
+    ']': '['
+  }
+
+  for char in s:
+    if char in bracket_mapping.values():
+      stack.append(char)
+    elif char in bracket_mapping:
+      if not stack or stack[-1] != bracket_mapping[char]:
+        return False
+      stack.pop()
+    else:
+      return False
+  return not stack
+
 if __name__ == "__main__":
   pass
