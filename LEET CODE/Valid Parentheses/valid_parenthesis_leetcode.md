@@ -37,3 +37,28 @@ Example 4:
 Input: s = "([])"
 
 Output: true
+
+## Solving strategy
+
+Using a stack to store opening brackets. For every closing bracket, check if it matches the last opening bracket in 
+the stack.
+
+### Stack
+
+Stack is a linear data structure that follows the principle of:
+
+`LIFO = Last in, first out`
+
+Common stack operations
+
+- Push(x) - add item x to the last position, top
+- pop() - remove and return the last (top) item
+- peek() - look at the top item
+- isEmpty() - check if stack is empty
+
+Analogy:
+
+- stack is like a pile of plates
+- we put new plates on top (push)
+- you remove the top plate when needed (pop)
+- you can't remove a plate from the middle or bottom directly
