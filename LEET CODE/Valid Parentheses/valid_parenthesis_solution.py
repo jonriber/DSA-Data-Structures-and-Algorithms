@@ -12,9 +12,12 @@ def valid_parenthesis(s:str) -> bool:
   }
 
   for char in s:
+    print(f"Processing character: {char}")
     if char in bracket_mapping.values():
+      print(f"Checking values: {bracket_mapping.values()} and condition: {char in bracket_mapping.values()}")
       stack.append(char)
     elif char in bracket_mapping:
+      print(f"Checking keys: {bracket_mapping.keys()} and condition: {char in bracket_mapping}")
       if not stack or stack[-1] != bracket_mapping[char]:
         return False
       stack.pop()
@@ -29,4 +32,3 @@ if __name__ == "__main__":
   print(valid_parenthesis(test_string2))  # Expected output: False
   print(valid_parenthesis("()"))  # Expected output: True
 
-  
