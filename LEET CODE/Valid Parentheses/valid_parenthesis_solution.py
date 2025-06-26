@@ -23,4 +23,10 @@ def valid_parenthesis(s:str) -> bool:
   return not stack
 
 if __name__ == "__main__":
-  pass
+  test_string1 = "({[]})"
+  test_string2 = "({[})"
+  print(valid_parenthesis(test_string1))  # Expected output: True
+  print(valid_parenthesis(test_string2))  # Expected output: False
+  print(valid_parenthesis("()"))  # Expected output: True
+
+  
