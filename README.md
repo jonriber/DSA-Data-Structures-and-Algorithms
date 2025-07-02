@@ -82,3 +82,5 @@ Goal: Strengthen your confidence and optimize speed before the interview.
 2- System Design & Behavioral Practice:
 - If applying for senior roles, start reviewing system design concepts.
 - Also, practice answering behavioral questions and explaining the thought process for algorithmic problems.
+
+DSA and leer code peoblems
