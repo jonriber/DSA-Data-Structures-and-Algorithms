@@ -12,7 +12,9 @@ function createObject(stringToParse, valueToAssign) {
       current[key] = valueToAssign;
     } else {
       current[key] = {};
+      console.log(`current before: ${JSON.stringify(current)}`);
       current = current[key];
+      console.log(`current after: ${JSON.stringify(current)}`);
     }
   }
   console.log(`Final Result Object: ${JSON.stringify(result)}`);
