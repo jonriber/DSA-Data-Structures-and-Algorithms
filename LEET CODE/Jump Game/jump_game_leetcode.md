@@ -19,3 +19,10 @@ Input: nums = [3,2,1,0,4]
 Output: false
 Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible 
 to reach the last index.
+
+## Solution
+
+- `max_reach` keeps track of the farthest reachable index
+- At each index i, check if its within max_reach
+- if not, index can not be reachable, and so, return False
+- If it is possible to make to the end of the loop, than return True
