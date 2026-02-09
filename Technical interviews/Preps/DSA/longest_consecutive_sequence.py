@@ -14,7 +14,7 @@ def longest_consecutive_sequence(nums):
 
     num_set = set(nums)
 
-    print(num_set)
+    # print(num_set)
 
     for num in num_set:
         if num-1 not in num_set:
