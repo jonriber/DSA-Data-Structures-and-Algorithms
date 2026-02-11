@@ -85,3 +85,13 @@ My translation for this SQL query:
 - pagination with limit and offset
 
 #### now the second endpoint
+I want to select only users who created at least 3 tasks in the last 7 days
+
+the SQL is:
+```sql
+SELECT user_id
+FROM tasks
+WHERE created_at >= now() - interval '7 days'
+GROUP BY user_id
+HAVING COUNT(*) >= 3;
+```
